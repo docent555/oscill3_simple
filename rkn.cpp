@@ -76,6 +76,7 @@ Rkn::Rkn(QObject *parent) : QObject(parent), ic(0.0, 1.0)
    }
    F0 = new double[Ne];
    A = new complex<double>[NZ];
+   circ = new complex<double>[361];
    eff = new double[NZ];
 
    //========================================================================================//
@@ -123,14 +124,20 @@ Rkn::Rkn(QObject *parent) : QObject(parent), ic(0.0, 1.0)
          abspmax = absp;
    }
 
+   for (int k = 0; k <= 360; k++) {
+      circ[k] = exp(ic * 2.0 * M_PI / 360.0 * double(k));
+   }
+
    F = sqrt(Ar * Ar + Ai * Ai);
 
    //   ofstream f;
    //   f.open("test.dat");
-   //   for (int i = 0; i < Ne; i++) {
-   //      f << i << ' ' << real(p[i][0]) << "   " << imag(p[i][0]) << '\n';
+   //   for (int i = 0; i < 360; i++) {
+   //      f << i << ' ' << real(circ[i]) << "   " << imag(circ[i]) << '\n';
    //   }
    //   f.close();
+   //   exit(0);
+
    //========================================================================================//
    //						   / Начальные условия для p
    //========================================================================================//

@@ -31,7 +31,7 @@ private:
                                             *xmax_prof, *ymin_prof, *ymax_prof,
                                             *xmin_eta = &xmin_val, *xmax_eta, *ymin_eta, *ymax_eta;
 
-   complex<double> **p, *A;
+   complex<double> **p, *A, *circ;
    int nz,                                      // число точек по z
        nt,                                      // число точек по времени
        ne, *it, phase_space, draw_trajectories; // текущая точка времени
@@ -78,6 +78,7 @@ private:
    QList<QScatterSeries *> series;
    QList<QScatterSeries *> series_prof_scat;
    QList<QLineSeries *> series_prof_line;
+   QList<QLineSeries *> series_circ;
    QList<QLineSeries *> series_eta;
    QList<QChartView *> m_charts;
    Rkn *r;

@@ -21,7 +21,7 @@ class Rkn : public QObject
    //****************************************************************************************//
    //							 Параметры счета и начальные условия
    //****************************************************************************************//
-   complex<double> ic, *A, **p, *s1, *s2, *s3, *s4;
+   complex<double> ic, *A, **p, *s1, *s2, *s3, *s4, *circ;
    double h, L, hth, delta, Ar, Ai, F;
    int NZ, Ne, phase_space, draw_trajectories;
    int it; // текущий момент времени
@@ -49,6 +49,7 @@ public:
    int getnz() { return NZ; }
    int *getit() { return &it; }
    complex<double> **get_p() { return p; }
+   complex<double> *get_circ() { return circ; }
    double **get_theta() { return th; }
    double **get_dtheta() { return dthdz; }
    double *get_thmin() { return &thmin; }

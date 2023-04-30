@@ -20,6 +20,11 @@ Dialog::Dialog(
    delta = 0.5;
    L = 30.6;
    h = 0.03;
+   //   Ar = 0.38;
+   //   Nth = 64;
+   //   delta = 0.6;
+   //   L = 26;
+   //   h = 0.03;
    phase_space = 1;
    draw_trajectories = 0;
    //   } else {
